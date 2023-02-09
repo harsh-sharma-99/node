@@ -1,7 +1,8 @@
+const validator = require('validator');
 const getNotes = require('./notes.js');
 
 const data = getNotes();
-console.log("======", data)
+console.log("======", validator.isEmail("hasrs@sasacom"))
 
 
 
