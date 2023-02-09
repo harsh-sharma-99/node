@@ -1,13 +1,7 @@
-require('./notes.js');
+const getNotes = require('./notes.js');
 
-console.log("=======notesApp=======")
-
-
-
-
-
-
-
+const data = getNotes();
+console.log("======", data)
 
 
 
