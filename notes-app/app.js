@@ -1,11 +1,14 @@
-const validator = require('validator');
-const getNotes = require('./notes.js');
+import chalk from 'chalk';
 
-const data = getNotes();
-console.log("======", validator.isEmail("hasrs@sasacom"))
+const msg = chalk.bold.yellow.inverse.red('Success!');
+
+console.log(msg);
 
 
 
 // const fs  = require('fs');
 // fs.writeFileSync('notes.txt', "I am hasrh sharma");
 // fs.appendFileSync('notes.txt', "Haha I won")
+
+// const getNotes = require('./notes.js');
+// const data = getNotes();
