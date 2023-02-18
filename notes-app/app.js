@@ -57,8 +57,8 @@ yargs.command(
 )
 
 // console.log(yargs.argv); //or use yargs.parse()
-
 yargs.parse()
+
 // const fs  = require('fs');
 // fs.writeFileSync('notes.txt', "I am hasrh sharma");
 // fs.appendFileSync('notes.txt', "Haha I won")
