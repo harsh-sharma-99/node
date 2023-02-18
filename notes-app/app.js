@@ -2,16 +2,23 @@ import _yargs from 'yargs'
 import { hideBin } from 'yargs/helpers';
 const yargs = _yargs(hideBin(process.argv));
 
-yargs.version('2.2.0');
-
 yargs.command(
     "add",
     "Add a note",
     {
-
+      title:{
+        describe:"This is title",
+        demandOption:true,
+        type:"string"
+      },
+      body:{
+        describe:"This is Body",
+        demandOption:true,
+        type:"string"
+      }
     },
     function (argv) {
-      console.log("=======add=======");
+      console.log("=======add=======", argv.title, argv.body );
     }
 )
 
@@ -49,9 +56,9 @@ yargs.command(
     }
 )
 
-console.log(yargs.argv);
+// console.log(yargs.argv); //or use yargs.parse()
 
-
+yargs.parse()
 // const fs  = require('fs');
 // fs.writeFileSync('notes.txt', "I am hasrh sharma");
 // fs.appendFileSync('notes.txt', "Haha I won")
