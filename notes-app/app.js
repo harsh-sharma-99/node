@@ -1,8 +1,9 @@
 import _yargs from 'yargs'
 import { hideBin } from 'yargs/helpers';
-import {addNotes} from './notes.js';
+import {addNotes, removeNote} from './notes.js';
 // const notes = require('./notes.js')
 const yargs = _yargs(hideBin(process.argv));
+
 
 yargs.command(
     "add",
@@ -30,10 +31,15 @@ yargs.command(
     "remove",
     "Remove a note",
     {
-
+      title:{
+        describe:"This is title",
+        demandOption:true,
+        type:"string"
+      }
     },
     function (argv) {
       console.log("=======remove=======");
+      removeNote(argv.title)
     }
 )
 
