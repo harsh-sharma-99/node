@@ -1,5 +1,7 @@
 import _yargs from 'yargs'
 import { hideBin } from 'yargs/helpers';
+import {addNotes} from './notes.js';
+// const notes = require('./notes.js')
 const yargs = _yargs(hideBin(process.argv));
 
 yargs.command(
@@ -19,6 +21,7 @@ yargs.command(
     },
     function (argv) {
       console.log("=======add=======", argv.title, argv.body );
+      addNotes(argv.title, argv.body)
     }
 )
 
