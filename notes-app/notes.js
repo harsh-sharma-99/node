@@ -54,8 +54,17 @@ const loadNotes = function() {
     }
 }
 
+const listNotes = () => {
+    console.log(chalk.black.bgGreen.bold("========Listing Notes=========="));
+    const data = loadNotes();
+    data?.map(note => {
+        console.log("=====title====", note?.title);
+    })
+}
+
 export  {
     getNotes ,
     addNotes ,
-    removeNote
+    removeNote,
+    listNotes
 };
