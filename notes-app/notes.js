@@ -10,9 +10,11 @@ const getNotes = function() {
  const addNotes = function(title, body) {
 
     const notes = loadNotes();
-    const duplicateNotes = notes?.filter((note) => note.title === title);
+    // const duplicateNotes = notes?.filter((note) => note.title === title);
+    const duplicateNote = notes?.find((note) => note.title === title);
 
-    if(duplicateNotes.length === 0){
+
+    if(!duplicateNote){
         notes.push({ 
             title: title, 
             body: body
@@ -62,9 +64,23 @@ const listNotes = () => {
     })
 }
 
+const readNote = (title) => {
+
+    const data = loadNotes();
+
+    const findNote = data?.find((note) => note.title === title );
+    if(findNote){
+        console.log("=======title=======", findNote.title);
+        console.log("=======body=======", findNote.body);
+    }else{
+        console.log(chalk.white.bgRed.bold('No Note Found'));
+    }
+}
+
 export  {
     getNotes ,
     addNotes ,
     removeNote,
-    listNotes
+    listNotes,
+    readNote
 };

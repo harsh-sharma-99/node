@@ -1,6 +1,6 @@
 import _yargs from 'yargs'
 import { hideBin } from 'yargs/helpers';
-import {addNotes, removeNote, listNotes} from './notes.js';
+import {addNotes, removeNote, listNotes, readNote} from './notes.js';
 // const notes = require('./notes.js')
 const yargs = _yargs(hideBin(process.argv));
 
@@ -59,10 +59,15 @@ yargs.command(
     "read",
     "Read a note",
     {
-
+      title:{
+        describe:"This is title",
+        demandOption:true,
+        type:"string"
+      }
     },
     function (argv) {
       console.log("=======read=======");
+      readNote(argv.title)
     }
 )
 
